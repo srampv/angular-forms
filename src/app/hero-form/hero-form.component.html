@@ -1,3 +1,25 @@
+<form [formGroup]="profileForm" (ngSubmit) ="onSubmit()">
+  
+  
+
+  
+
+  <table >
+    <thead>
+    <th>Id</th>
+    <th>Title</th>
+    
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of products">
+            <td><a href=`{{p.id}}`>{{p.id}}</a></td>
+            <td><a href=`{{p.url}}`>{{p.url}}</a></td>
+            <td><input formControlName="isChecked" (change)="doMe(p)" type="checkbox"></td>
+        </tr>
+    </tbody>
+</table>
 <p>
-  hero-form works!
+  <button (click)="updateName()">Submit</button>
 </p>
+
+</form>
